@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Simple_Grocery_Store">
+	<test thread-count="5" name="Suite SimpleGroceryStore">
+		<classes>
+			<!--			<class name="api.test.GetNewCart" />
+-->			<!--<class name="api.test.AddItemInCart" />-->
+			<class name="api.test.GetAllOrdersBearer" />
+			<!--			<class name="api.test.DeleteItemInTheCart" />
+-->
+			<class name="api.test.GetAProduct" />
+			<class name="api.test.getrequest" />
+			<!--			<class name="api.test.CreateNewCart" />
+-->
+			<class name="api.test.GetAllProduct" />
+			<!--			<class name="api.test.GetCart" />
+-->
+		</classes>
+	</test>
+</suite> 

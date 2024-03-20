@@ -1,10 +1,8 @@
 package api.test;
-
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import Base.Baseclass;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
@@ -12,9 +10,9 @@ import io.restassured.http.Method;
 public class GetCart extends Baseclass {
 	@BeforeClass
 	public void getProduct() throws InterruptedException {
-		RestAssured.baseURI = "http://simple-grocery-store-api.online/";
+		RestAssured.baseURI = Baseclass.base_Url;
 		httpRequest = RestAssured.given();
-		response = httpRequest.request(Method.GET, "/carts/", "X-5epTgsv8-e0OnH4pFgh");
+		response = httpRequest.request(Method.GET, "/carts/", "CWAN3315inEPKB_2CDiIA");
 		Thread.sleep(2000);
 
 	}

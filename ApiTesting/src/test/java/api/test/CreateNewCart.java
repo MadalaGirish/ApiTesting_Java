@@ -1,19 +1,17 @@
 package api.test;
 
 import Base.Baseclass;
-
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 
 public class CreateNewCart extends Baseclass {
 	@BeforeClass
 	public void getProduct() throws InterruptedException {
-		RestAssured.baseURI = "http://simple-grocery-store-api.online/";
+		RestAssured.baseURI = Baseclass.base_Url;
 		httpRequest = RestAssured.given();
 		response = httpRequest.request(Method.POST, "/carts");
 		Thread.sleep(3000);

@@ -1,12 +1,9 @@
 package api.test;
 
-import java.net.http.HttpRequest;
-
 import org.json.JSONObject;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import api.endpoints.Urls;
+import Base.Baseclass;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
@@ -36,7 +33,7 @@ public class getrequest {
 	@Test
 	public void postReq() {
 
-		RestAssured.baseURI = Urls.base_Url;
+		RestAssured.baseURI = Baseclass.base_Url;
 
 		RequestSpecification http = RestAssured.given();
 		JSONObject request = new JSONObject();
@@ -50,6 +47,7 @@ public class getrequest {
 		int status = response.getStatusCode();
 		String res = response.getBody().asString();
 		System.out.println("Response Body:" + res);
+
 //		System.out.println("Status Code value: " + status);
 
 //		Response response = http.request(Method.POST, "/carts");

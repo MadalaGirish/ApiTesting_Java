@@ -28,7 +28,7 @@ public class AddItemInCart extends Baseclass {
 	@Test
 	public void resposeBody() {
 		String responseBody = response.getBody().asString();
-		System.out.println(responseBody);
+		System.out.println("Response Body:" + responseBody);
 
 	}
 

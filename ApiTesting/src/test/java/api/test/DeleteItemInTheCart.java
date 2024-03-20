@@ -17,14 +17,12 @@ public class DeleteItemInTheCart extends Baseclass {
 		httpRequest.header("content-type", "application/json; charset=utf-8");
 		httpRequest.body(requestparams.toJSONString());
 		response = httpRequest.request(Method.DELETE, "/carts/" + cartId + "/items" + "/175803606");
-
 	}
 
 	@Test
 	public void resposeBody() {
 		String responseBody = response.getBody().asString();
 		System.out.println(responseBody);
-
 	}
 
 	@Test
@@ -32,7 +30,6 @@ public class DeleteItemInTheCart extends Baseclass {
 		int status = response.getStatusCode();
 		Assert.assertEquals(status, 204);
 		System.out.println("Valid Status Code:" + status);
-
 	}
 
 	@Test
@@ -41,7 +38,6 @@ public class DeleteItemInTheCart extends Baseclass {
 		System.out.println("Response Time:" + responseTime);
 		if (responseTime > 2000)
 			System.out.println("Response Time is greater then 1000:" + responseTime);
-
 		Assert.assertTrue(responseTime < 2000);
 
 	}

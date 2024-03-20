@@ -1,5 +1,4 @@
 package api.test;
-
 import Base.Baseclass;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -15,14 +14,12 @@ public class CreateNewCart extends Baseclass {
 		httpRequest = RestAssured.given();
 		response = httpRequest.request(Method.POST, "/carts");
 		Thread.sleep(3000);
-
 	}
 
 	@Test
 	public void resposeBody() {
 		String responseBody = response.getBody().asString();
 		System.out.println(responseBody);
-
 	}
 
 	@Test
@@ -30,7 +27,6 @@ public class CreateNewCart extends Baseclass {
 		int status = response.getStatusCode();
 		Assert.assertEquals(status, 201);
 		System.out.println("Valid Status Code:" + status);
-
 	}
 
 	@Test
@@ -39,9 +35,7 @@ public class CreateNewCart extends Baseclass {
 		System.out.println("Response Time:" + responseTime);
 		if (responseTime > 2000)
 			System.out.println("Response Time is greater then 1000:" + responseTime);
-
 		Assert.assertTrue(responseTime < 2000);
-
 	}
 
 	@Test
@@ -49,7 +43,6 @@ public class CreateNewCart extends Baseclass {
 		String contenttype = response.header("content-type");
 		System.out.println("Content Type:" + contenttype);
 		Assert.assertEquals(contenttype, "application/json; charset=utf-8");
-
 	}
 
 	@AfterClass
